@@ -21,12 +21,15 @@
   var left = frame.querySelector('.if-left');
   var right = frame.querySelector('.if-right');
 
+  var PAD = 14;                      // gap between the image and the frame lines
   function place() {
     var r = img.getBoundingClientRect();
-    top.style.top = r.top + 'px';
-    bottom.style.top = r.bottom + 'px';
-    left.style.left = r.left + 'px';
-    right.style.left = r.right + 'px';
+    var cx = r.left + r.width / 2;   // image centre, so lines emanate from the image
+    var cy = r.top + r.height / 2;
+    top.style.top = (r.top - PAD) + 'px';        top.style.transformOrigin = cx + 'px center';
+    bottom.style.top = (r.bottom + PAD) + 'px';  bottom.style.transformOrigin = cx + 'px center';
+    left.style.left = (r.left - PAD) + 'px';     left.style.transformOrigin = 'center ' + cy + 'px';
+    right.style.left = (r.right + PAD) + 'px';   right.style.transformOrigin = 'center ' + cy + 'px';
   }
 
   var active = false;

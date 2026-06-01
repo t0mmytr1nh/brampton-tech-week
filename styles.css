@@ -208,7 +208,7 @@ a:hover::after,  [data-cursor="target"]:hover::after,  .soon:hover::after{ font-
    guide lines spanning the viewport that draw in from the edges to frame it. */
 .img-frame{ position:fixed; inset:0; z-index:9000; pointer-events:none; opacity:0; transition:opacity 200ms ease; }
 .img-frame.active{ opacity:1; }
-.if-line{ position:fixed; background:var(--hot); transition:transform 340ms cubic-bezier(.2,.85,.25,1); }
+.if-line{ position:fixed; background:var(--hot); transition:transform 700ms cubic-bezier(.16,.8,.3,1); }
 
 /* Everything but the image fades back while the image is hovered */
 .title, .blurb, .caption, .section-label, .partner{ transition:opacity 220ms ease; }
@@ -217,12 +217,9 @@ a:hover::after,  [data-cursor="target"]:hover::after,  .soon:hover::after{ font-
 .img-focus .caption,
 .img-focus .section-label,
 .img-focus .partner{ opacity:0.5; }
+/* transform-origin is set per-line in image-frame.js to the image centre */
 .if-top, .if-bottom{ left:0; width:100vw; height:1.5px; transform:scaleX(0); }
 .if-left, .if-right{ top:0; height:100vh; width:1.5px; transform:scaleY(0); }
-.if-top{ transform-origin:left center; }
-.if-bottom{ transform-origin:right center; }
-.if-left{ transform-origin:center bottom; }
-.if-right{ transform-origin:center top; }
 .img-frame.active .if-top, .img-frame.active .if-bottom{ transform:scaleX(1); }
 .img-frame.active .if-left, .img-frame.active .if-right{ transform:scaleY(1); }
 
