@@ -63,7 +63,7 @@ body{
 .theme-toggle{
   display:flex; width:fit-content;          /* own line, shrink to the icon, left-aligned */
   align-items:center; justify-content:center;
-  margin:0 0 var(--gap-tight); padding:0; border:0; background:none;
+  margin:0 0 1.25rem; padding:0; border:0; background:none;
   font-size:var(--fs-body); line-height:0;
   color:var(--heading); transition:color 150ms ease;
 }
