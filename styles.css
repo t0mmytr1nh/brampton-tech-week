@@ -36,6 +36,7 @@
   --gap-block: 2.5rem;      /* space before "Founding Partners" */
   --gap-tight: 0.75rem;     /* title -> blurb, label -> partner */
   --pad-mobile: 1.5rem;
+  --pad-top: 12vh;          /* column top padding == title's vertical offset */
 }
 
 /* Dark theme — only the base tones flip; accent + greys stay */
@@ -60,7 +61,8 @@ body{
 
 /* Theme toggle — top-right of the centred column, sized to the body text */
 .theme-toggle{
-  position:absolute; top:1.25rem; right:var(--pad-mobile); z-index:100;
+  position:absolute; top:var(--pad-top); right:var(--pad-mobile); z-index:100;
+  height:calc(var(--fs-h1) * var(--lh-heading));   /* match the title line box */
   display:inline-flex; align-items:center; justify-content:center;
   padding:0; margin:0; border:0; background:none;
   font-size:var(--fs-body); line-height:0;
@@ -82,7 +84,7 @@ body{
   max-width:var(--measure);
   margin-inline:auto;            /* centered, large side margins on wide screens */
   padding-inline:var(--pad-mobile);
-  padding-block: 12vh 10vh;      /* vertical placement */
+  padding-block: var(--pad-top) 10vh;   /* vertical placement */
 }
 
 .title{
@@ -254,7 +256,8 @@ a:hover::after,  [data-cursor="target"]:hover::after,  .soon:hover::after{ font-
 }
 
 @media (max-width:600px){
-  .column{ padding-inline:var(--pad-mobile); padding-block:8vh 8vh; }
+  :root{ --pad-top:8vh; }
+  .column{ padding-inline:var(--pad-mobile); padding-block:var(--pad-top) 8vh; }
   .media{ flex-direction:column; gap:var(--gap-tight); }
   .figure{ width:70%; }
 }
