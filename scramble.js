@@ -56,7 +56,7 @@
 
   // --- Decode-on-load (skipped for reduced-motion) ---
   function run() {
-    var selectors = ['.title', '.blurb', '.caption', '.section-label', '.partner'];
+    var selectors = ['.title', '.blurb', '.caption', '.section-label', '.partner', '.footnote'];
     var items = [];
     selectors.forEach(function (sel) {
       var els = document.querySelectorAll(sel);

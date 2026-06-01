@@ -94,6 +94,7 @@ body{
   margin:var(--gap-block) 0 0;
 }
 .partner{ margin:var(--gap-tight) 0 0; }
+.footnote{ font-size:0.85em; color:var(--muted); margin:var(--gap-block) 0 0; }
 
 /* Cycling glyphs during the decode-on-load animation */
 .dud{ color:var(--select); }
